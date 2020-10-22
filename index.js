@@ -14,13 +14,14 @@ $(document).keypress(function() {
     started = true;
   }
 });
-$(document).click(function() {
+$(".play").click(function() {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
 });
+
 
 $(".btn").click(function() {
 
@@ -45,8 +46,8 @@ function checkAnswer(currentLevel) {
     } else {
       playSound("wrong");
       $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Press Any Key to Restart");
-
+      $("#level-title").text("Game Over, Press Any Key or Click Play");
+      $("#play-button").text("Play Again");
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
